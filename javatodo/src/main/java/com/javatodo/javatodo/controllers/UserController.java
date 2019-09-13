@@ -55,7 +55,7 @@ public class UserController
     }
 
     //POST: localhost:2019/users/todos/{userid}
-    @PostMapping(value = "users/todo/{userid}",
+    @PostMapping(value = "users/todos/{userid}",
                  consumes = {"application/json"},
                  produces = {"application/json"})
     public ResponseEntity<?> addUserTodo(@PathVariable long userid,

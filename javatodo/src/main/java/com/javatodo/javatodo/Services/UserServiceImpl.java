@@ -149,7 +149,7 @@ public class UserServiceImpl implements UserDetailsService, UserService
         ArrayList<Todo> newTodos = new ArrayList<>();
         for (Todo t : u.getTodos())
         {
-            todorepos.addUserTodos(t.getTodoid(), u.getUserid());
+            todorepos.addUserTodos();
         }
         u.setTodos(newTodos);
 
