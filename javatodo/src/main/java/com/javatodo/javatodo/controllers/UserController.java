@@ -61,13 +61,10 @@ public class UserController
     public ResponseEntity<?> addUserTodo(@PathVariable long userid,
                                          @Valid
                                          @RequestBody
-                                                 Todo newTodo) throws URISyntaxException
+                                                 Todo newTodo)
     {
-        newTodo = userService.addTodo(newTodo, userid);
-        HttpHeaders responseHeaders = new HttpHeaders();
-        URI newRestaurantURI = ServletUriComponentsBuilder.fromCurrentRequest().path("/{todoid}").buildAndExpand(newTodo.getTodoid()).toUri();
-        responseHeaders.setLocation(newRestaurantURI);
-        return new ResponseEntity<>(null, responseHeaders, HttpStatus.OK);
+        userService.addTodo(newTodo, userid);
+        return new ResponseEntity<>( HttpStatus.OK);
     }
 
     //DELETE localhost:2019/users/userid/{userid}
