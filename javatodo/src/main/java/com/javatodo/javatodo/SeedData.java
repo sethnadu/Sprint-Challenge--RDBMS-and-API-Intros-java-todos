@@ -1,13 +1,28 @@
-// provided by Vivek Vishwanath
+package com.javatodo.javatodo;
+
+import com.javatodo.javatodo.model.Role;
+import com.javatodo.javatodo.model.Todo;
+import com.javatodo.javatodo.model.User;
+import com.javatodo.javatodo.model.UserRoles;
+import com.javatodo.javatodo.repository.RoleRepository;
+import com.javatodo.javatodo.repository.TodoRepository;
+import com.javatodo.javatodo.repository.UserRepository;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.Date;
 
 @Transactional
 @Component
-public class SeedData implements CommandLineRunner {
+public class SeedData implements CommandLineRunner
+{
     RoleRepository rolerepos;
     UserRepository userrepos;
-    ToDoRepository todorepos;
+    TodoRepository todorepos;
 
-    public SeedData(RoleRepository rolerepos, UserRepository userrepos, ToDoRepository todorepos) {
+    public SeedData(RoleRepository rolerepos, UserRepository userrepos, TodoRepository todorepos) {
         this.rolerepos = rolerepos;
         this.userrepos = userrepos;
         this.todorepos = todorepos;
